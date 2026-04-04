@@ -1,0 +1,80 @@
+/* Base */
+body {
+    font-family: system-ui, -apple-system, Arial, sans-serif;
+    margin: 0;
+    background-color: #f7f7f8; /* soft light gray */
+    color: #1f2937;
+    line-height: 1.6;
+  }
+  
+/* Navigation */
+  nav {
+    background-color: #ffffff;
+    padding: 12px 20px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  nav a {
+    color: #374151;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  nav a:hover {
+    color: #2563eb;
+  }
+  
+/* Layout */
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+/* Header */
+  header {
+    padding: 30px 0 10px;
+  }
+  
+header h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+  }
+  
+  header p {
+    color: #6b7280;
+  }
+  
+/* Sections */
+  section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+  }
+  
+/* Headings */
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+/* Links */
+  a {
+    color: #2563eb;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+/* Footer */
+  footer {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+  }
