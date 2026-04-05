@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Buttons — UI Component</title>
+  <meta name="description" content="Learn how to style buttons using CSS for better user interaction.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Buttons</h1>
+      <p>
+        Buttons are used for user interaction. Styling them properly improves usability
+        and makes your interface look professional.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>How to style buttons</li>
+        <li>How to use hover effects</li>
+        <li>How to create reusable button styles</li>
+      </ul>
+    </section>
+
+    <!-- BASIC BUTTON -->
+    <section>
+      <h2>Basic Button</h2>
+
+      <pre>
+button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+      </pre>
+
+      <p>Example:</p>
+      <button style="background:#2563eb;color:white;padding:10px 20px;border:none;border-radius:5px;">
+        Click Me
+      </button>
+    </section>
+
+    <!-- HOVER EFFECT -->
+    <section>
+      <h2>Hover Effect</h2>
+
+      <pre>
+button:hover {
+  background-color: #1d4ed8;
+}
+      </pre>
+
+      <p>This changes the color when the user hovers over the button.</p>
+    </section>
+
+    <!-- TRANSITION -->
+    <section>
+      <h2>Smooth Transition</h2>
+
+      <pre>
+button {
+  transition: 0.3s;
+}
+      </pre>
+
+      <p>This makes the hover effect smooth.</p>
+    </section>
+
+    <!-- BUTTON TYPES -->
+    <section>
+      <h2>Button Variations</h2>
+
+      <pre>
+.primary {
+  background: #2563eb;
+}
+
+.secondary {
+  background: #6b7280;
+}
+
+.success {
+  background: #16a34a;
+}
+      </pre>
+
+      <p>Example:</p>
+      <button style="background:#2563eb;color:white;padding:10px;">Primary</button>
+      <button style="background:#6b7280;color:white;padding:10px;">Secondary</button>
+      <button style="background:#16a34a;color:white;padding:10px;">Success</button>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Use consistent colors and sizes</li>
+        <li>Provide hover feedback</li>
+        <li>Keep buttons clear and readable</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Create a styled button</li>
+        <li>Add hover effect</li>
+        <li>Create 3 button styles (primary, secondary, success)</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="cards.html">Cards →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
