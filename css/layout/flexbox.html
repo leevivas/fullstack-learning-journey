@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Flexbox — Layout and Alignment</title>
+  <meta name="description" content="Learn how to use Flexbox to build flexible layouts and align elements.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Flexbox</h1>
+      <p>
+        Flexbox is a layout system that allows you to align and distribute elements
+        efficiently. It is one of the most used tools in modern web development.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>How Flexbox works</li>
+        <li>How to align items horizontally and vertically</li>
+        <li>How to create flexible layouts</li>
+      </ul>
+    </section>
+
+    <!-- BASIC CONCEPT -->
+    <section>
+      <h2>Basic Concept</h2>
+
+      <p>
+        To use Flexbox, you apply <strong>display: flex</strong> to a container.
+        All child elements become flex items.
+      </p>
+
+      <pre>
+.container {
+  display: flex;
+}
+      </pre>
+    </section>
+
+    <!-- ALIGNMENT -->
+    <section>
+      <h2>Alignment</h2>
+
+      <pre>
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+      </pre>
+
+      <ul>
+        <li><strong>justify-content</strong> — horizontal alignment</li>
+        <li><strong>align-items</strong> — vertical alignment</li>
+      </ul>
+    </section>
+
+    <!-- EXAMPLE -->
+    <section>
+      <h2>Example Layout</h2>
+
+      <pre>
+.container {
+  display: flex;
+  gap: 10px;
+}
+
+.box {
+  background: #2563eb;
+  color: white;
+  padding: 20px;
+}
+      </pre>
+
+      <p>This creates a row of boxes aligned in one line.</p>
+    </section>
+
+    <!-- COMMON USE CASES -->
+    <section>
+      <h2>Common Use Cases</h2>
+      <ul>
+        <li>Navigation bars</li>
+        <li>Centering content</li>
+        <li>Card layouts</li>
+        <li>Responsive layouts</li>
+      </ul>
+    </section>
+
+    <!-- VISUAL -->
+    <section>
+      <h2>Visual Example</h2>
+
+      <div style="display:flex; gap:10px;">
+        <div style="background:#2563eb;color:white;padding:20px;">Box 1</div>
+        <div style="background:#2563eb;color:white;padding:20px;">Box 2</div>
+        <div style="background:#2563eb;color:white;padding:20px;">Box 3</div>
+      </div>
+
+      <p>These boxes are aligned using Flexbox.</p>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Use Flexbox for 1D layouts (row or column)</li>
+        <li>Combine with media queries for responsiveness</li>
+        <li>Keep layouts simple and readable</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Create a navigation bar using Flexbox</li>
+        <li>Center a div horizontally and vertically</li>
+        <li>Create 3 equal boxes in a row</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="grid.html">CSS Grid →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
