@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JavaScript Events</title>
+  <meta name="description" content="Learn how to respond to user actions using JavaScript events.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+ <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Events</h1>
+      <p>
+        Events allow your website to respond to user actions such as clicks,
+        typing, and mouse movements.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>What events are</li>
+        <li>How to handle user actions</li>
+        <li>Common event types</li>
+      </ul>
+    </section>
+
+    <!-- WHAT IS EVENT -->
+    <section>
+      <h2>What is an Event?</h2>
+      <p>
+        An event is something that happens in the browser, like a click,
+        a key press, or a page load.
+      </p>
+    </section>
+
+    <!-- CLICK EVENT -->
+    <section>
+      <h2>Click Event</h2>
+
+      <pre>
+button.addEventListener("click", function() {
+  console.log("Button clicked!");
+});
+      </pre>
+
+      <button id="btn">Click Me</button>
+
+      <script>
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function() {
+          alert("Button clicked!");
+        });
+      </script>
+    </section>
+
+    <!-- INPUT EVENT -->
+    <section>
+      <h2>Input Event</h2>
+
+      <pre>
+input.addEventListener("input", function() {
+  console.log(input.value);
+});
+      </pre>
+
+      <input type="text" id="nameInput" placeholder="Type something...">
+
+      <p id="output"></p>
+
+      <script>
+        let input = document.getElementById("nameInput");
+        let output = document.getElementById("output");
+
+        input.addEventListener("input", function() {
+          output.textContent = input.value;
+        });
+      </script>
+    </section>
+
+    <!-- COMMON EVENTS -->
+    <section>
+      <h2>Common Events</h2>
+      <ul>
+        <li>click</li>
+        <li>input</li>
+        <li>change</li>
+        <li>submit</li>
+        <li>mouseover</li>
+      </ul>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Use addEventListener instead of inline events</li>
+        <li>Keep event functions simple</li>
+        <li>Avoid repeating code</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Create a button that shows an alert</li>
+        <li>Display input text in real time</li>
+        <li>Change background color on click</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="manipulation.html">DOM Manipulation →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+   © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
