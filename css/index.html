@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Start Learning CSS</title>
+  <meta name="description" content="Learn CSS step by step. Style your web pages and create layouts.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Start Learning CSS</h1>
+      <p>
+        Now that you understand HTML structure, it’s time to make your pages look better.
+        CSS is used to style, layout, and design your website.
+      </p>
+    </header>
+
+    <!-- INTRO -->
+    <section>
+      <h2>What is CSS?</h2>
+      <p>
+        CSS (Cascading Style Sheets) is used to control how HTML elements look.
+        It allows you to change colors, spacing, layout, and overall design.
+      </p>
+    </section>
+
+    <!-- JOURNEY -->
+    <section>
+      <h2>Learning Together</h2>
+      <p>
+        This is the next step in the journey. Styling might feel challenging at first,
+        but with practice, it becomes one of the most powerful tools in web development.
+      </p>
+    </section>
+
+    <!-- LEARNING PATH -->
+    <section>
+      <h2>CSS Learning Path</h2>
+
+      <h3>Beginner</h3>
+      <ul>
+        <li>
+          <a href="css-basics/index.html">
+            CSS Basics, Style Your First Page
+          </a>
+          <p>Learn how to apply colors, fonts, and basic styling.</p>
+        </li>
+
+        <li>
+          <a href="css-basics/box-model.html">
+            Box Model
+          </a>
+          <p>Understand spacing, margins, padding, and borders.</p>
+        </li>
+      </ul>
+
+      <h3>Layout</h3>
+      <ul>
+        <li>
+          <a href="layout/flexbox.html">
+            Flexbox
+          </a>
+          <p>Build flexible layouts and align elements easily.</p>
+        </li>
+
+        <li>
+          <a href="layout/grid.html">
+            CSS Grid
+          </a>
+          <p>Create advanced layouts using rows and columns.</p>
+        </li>
+      </ul>
+
+      <h3>Responsive Design</h3>
+      <ul>
+        <li>
+          <a href="responsive/media-queries.html">
+            Media Queries
+          </a>
+          <p>Make your website work on mobile, tablet, and desktop.</p>
+        </li>
+      </ul>
+
+      <h3>Components</h3>
+      <ul>
+        <li>
+          <a href="components/buttons.html">
+            Buttons
+          </a>
+          <p>Style buttons for better user interaction.</p>
+        </li>
+
+        <li>
+          <a href="components/cards.html">
+            Cards
+          </a>
+          <p>Create reusable UI components for layouts.</p>
+        </li>
+      </ul>
+
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Where to Start</h2>
+      <p>
+        Begin with CSS Basics and learn how to style your first webpage.
+      </p>
+
+      <a href="css-basics/index.html">Start with CSS Basics →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+     © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
