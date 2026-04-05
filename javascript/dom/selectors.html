@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DOM Selectors</title>
+  <meta name="description" content="Learn how to select and access HTML elements using JavaScript.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>DOM Selectors</h1>
+      <p>
+        The DOM (Document Object Model) allows JavaScript to access and manipulate HTML elements.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>What the DOM is</li>
+        <li>How to select elements using JavaScript</li>
+        <li>Different selector methods</li>
+      </ul>
+    </section>
+
+    <!-- WHAT IS DOM -->
+    <section>
+      <h2>What is the DOM?</h2>
+      <p>
+        The DOM represents your HTML page as a structure that JavaScript can interact with.
+        It allows you to access and modify elements dynamically.
+      </p>
+    </section>
+
+    <!-- BASIC SELECTOR -->
+    <section>
+      <h2>Selecting Elements</h2>
+
+      <pre>
+let title = document.getElementById("title");
+      </pre>
+
+      <p>This selects an element by its ID.</p>
+    </section>
+
+    <!-- QUERY SELECTOR -->
+    <section>
+      <h2>Query Selector</h2>
+
+      <pre>
+let element = document.querySelector(".className");
+      </pre>
+
+      <p>
+        <strong>querySelector</strong> allows you to use CSS-style selectors.
+      </p>
+    </section>
+
+    <!-- MULTIPLE -->
+    <section>
+      <h2>Select Multiple Elements</h2>
+
+      <pre>
+let items = document.querySelectorAll("p");
+      </pre>
+
+      <p>
+        This selects all matching elements.
+      </p>
+    </section>
+
+    <!-- EXAMPLE -->
+    <section>
+      <h2>Example</h2>
+
+      <h3 id="demo">Hello World</h3>
+
+      <button onclick="changeText()">Click Me</button>
+
+      <script>
+        function changeText() {
+          let el = document.getElementById("demo");
+          el.textContent = "Text Changed!";
+        }
+      </script>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Use querySelector for flexibility</li>
+        <li>Use meaningful IDs and classes</li>
+        <li>Avoid selecting elements multiple times unnecessarily</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Select an element using ID</li>
+        <li>Select elements using class</li>
+        <li>Change text content dynamically</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="events.html">Events →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+© 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
