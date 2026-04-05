@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Modern JavaScript (ES6+)</title>
+  <meta name="description" content="Learn modern JavaScript features like arrow functions, destructuring, and modules.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Modern JavaScript (ES6+)</h1>
+      <p>
+        Modern JavaScript introduces powerful features that make code cleaner,
+        shorter, and easier to manage.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>Arrow functions</li>
+        <li>Destructuring</li>
+        <li>Modules</li>
+      </ul>
+    </section>
+
+    <!-- ARROW FUNCTIONS -->
+    <section>
+      <h2>Arrow Functions</h2>
+
+      <pre>
+const greet = (name) => {
+  return "Hello " + name;
+};
+      </pre>
+
+      <p>
+        Arrow functions are a shorter way to write functions.
+      </p>
+    </section>
+
+    <!-- DESTRUCTURING -->
+    <section>
+      <h2>Destructuring</h2>
+
+      <pre>
+let person = {
+  name: "Ana",
+  age: 20
+};
+
+let { name, age } = person;
+
+console.log(name);
+      </pre>
+
+      <p>
+        Destructuring allows you to extract values from objects easily.
+      </p>
+    </section>
+
+    <!-- ARRAY DESTRUCTURING -->
+    <section>
+      <h2>Array Destructuring</h2>
+
+      <pre>
+let colors = ["red", "blue", "green"];
+
+let [first, second] = colors;
+
+console.log(first);
+      </pre>
+    </section>
+
+    <!-- MODULES -->
+    <section>
+      <h2>Modules</h2>
+
+      <pre>
+// file1.js
+export const name = "John";
+
+// file2.js
+import { name } from "./file1.js";
+      </pre>
+
+      <p>
+        Modules allow you to split code into separate files.
+      </p>
+    </section>
+
+    <!-- TEMPLATE LITERALS -->
+    <section>
+      <h2>Template Literals</h2>
+
+      <pre>
+let name = "John";
+console.log(`Hello ${name}`);
+      </pre>
+
+      <p>
+        Use backticks (`) for easier string formatting.
+      </p>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Use arrow functions for short functions</li>
+        <li>Use destructuring for cleaner code</li>
+        <li>Organize code using modules</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Rewrite a function using arrow syntax</li>
+        <li>Extract values using destructuring</li>
+        <li>Create two JS files using modules</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="async/index.html">Asynchronous JavaScript →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
