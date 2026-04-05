@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CSS Basics — Style Your First Page</title>
+  <meta name="description" content="Learn the basics of CSS and style your first webpage.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>CSS Basics — Style Your First Page</h1>
+      <p>
+        Now that you know how to structure a webpage using HTML,
+        it's time to make it look better using CSS.
+      </p>
+    </header>
+
+    <!-- WHAT IS CSS -->
+    <section>
+      <h2>What is CSS?</h2>
+      <p>
+        CSS (Cascading Style Sheets) is used to control the appearance of HTML elements.
+        It allows you to change colors, fonts, spacing, and layout.
+      </p>
+    </section>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>How to apply CSS to HTML</li>
+        <li>Basic selectors</li>
+        <li>How to change colors and fonts</li>
+      </ul>
+    </section>
+
+    <!-- HOW TO USE CSS -->
+    <section>
+      <h2>How to Use CSS</h2>
+
+      <p>There are three ways to apply CSS:</p>
+
+      <ul>
+        <li>Inline CSS</li>
+        <li>Internal CSS</li>
+        <li>External CSS (recommended)</li>
+      </ul>
+
+      <p>Example (external CSS):</p>
+
+      <pre>
+&lt;link rel="stylesheet" href="style.css"&gt;
+      </pre>
+    </section>
+
+    <!-- BASIC CSS RULE -->
+    <section>
+      <h2>Basic CSS Syntax</h2>
+
+      <pre>
+selector {
+  property: value;
+}
+      </pre>
+
+      <p>Example:</p>
+
+      <pre>
+h1 {
+  color: blue;
+}
+      </pre>
+    </section>
+
+    <!-- COLORS & TEXT -->
+    <section>
+      <h2>Styling Text</h2>
+
+      <pre>
+p {
+  color: gray;
+  font-size: 16px;
+}
+      </pre>
+
+      <p>
+        You can control color, size, and appearance of text easily with CSS.
+      </p>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Change the color of a heading</li>
+        <li>Change the font size of a paragraph</li>
+        <li>Apply CSS to your HTML page</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="box-model.html">Box Model →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
