@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DOM Manipulation</title>
+  <meta name="description" content="Learn how to change content, styles, and structure using JavaScript.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>DOM Manipulation</h1>
+      <p>
+        DOM manipulation allows you to change the content, style, and structure
+        of your webpage dynamically using JavaScript.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>How to change text content</li>
+        <li>How to modify styles</li>
+        <li>How to create and remove elements</li>
+      </ul>
+    </section>
+
+    <!-- CHANGE CONTENT -->
+    <section>
+      <h2>Change Content</h2>
+
+      <pre>
+let el = document.getElementById("text");
+el.textContent = "New Text!";
+      </pre>
+
+      <h3 id="text">Original Text</h3>
+      <button onclick="changeContent()">Change Text</button>
+
+      <script>
+        function changeContent() {
+          document.getElementById("text").textContent = "Text Changed!";
+        }
+      </script>
+    </section>
+
+    <!-- CHANGE STYLE -->
+    <section>
+      <h2>Change Style</h2>
+
+      <pre>
+el.style.color = "red";
+      </pre>
+
+      <p id="colorText">Watch my color change</p>
+      <button onclick="changeStyle()">Change Color</button>
+
+      <script>
+        function changeStyle() {
+          let el = document.getElementById("colorText");
+          el.style.color = "red";
+        }
+      </script>
+    </section>
+
+    <!-- CREATE ELEMENT -->
+    <section>
+      <h2>Create Element</h2>
+
+      <pre>
+let newEl = document.createElement("p");
+newEl.textContent = "New paragraph";
+document.body.appendChild(newEl);
+      </pre>
+
+      <button onclick="addElement()">Add Paragraph</button>
+
+      <script>
+        function addElement() {
+          let newEl = document.createElement("p");
+          newEl.textContent = "New paragraph added!";
+          document.body.appendChild(newEl);
+        }
+      </script>
+    </section>
+
+    <!-- REMOVE ELEMENT -->
+    <section>
+      <h2>Remove Element</h2>
+
+      <pre>
+el.remove();
+      </pre>
+
+      <p id="removeMe">Remove me</p>
+      <button onclick="removeElement()">Remove</button>
+
+      <script>
+        function removeElement() {
+          document.getElementById("removeMe").remove();
+        }
+      </script>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Separate JavaScript from HTML when possible</li>
+        <li>Reuse selected elements</li>
+        <li>Avoid excessive DOM updates</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Create a button that changes text</li>
+        <li>Change styles dynamically</li>
+        <li>Add and remove elements</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Step</h2>
+      <p>
+        You’ve completed DOM basics. Next, explore functions and reusable logic.
+      </p>
+
+      <a href="../functions/index.html">Functions →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+© 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
