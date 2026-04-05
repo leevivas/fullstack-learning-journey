@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CSS Box Model</title>
+  <meta name="description" content="Understand the CSS box model including margin, border, padding, and content.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Box Model</h1>
+      <p>
+        Every HTML element is a box. Understanding how this box works is key to
+        controlling spacing and layout in CSS.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>What the CSS box model is</li>
+        <li>The difference between margin, border, and padding</li>
+        <li>How spacing affects layout</li>
+      </ul>
+    </section>
+
+    <!-- EXPLANATION -->
+    <section>
+      <h2>The Box Model Explained</h2>
+
+      <p>
+        Every element is made up of four parts:
+      </p>
+
+      <ul>
+        <li><strong>Content</strong> — the actual text or image</li>
+        <li><strong>Padding</strong> — space inside the box (around content)</li>
+        <li><strong>Border</strong> — the edge of the box</li>
+        <li><strong>Margin</strong> — space outside the box</li>
+      </ul>
+
+      <p>
+        These layers together form the total size of an element.
+      </p>
+    </section>
+
+    <!-- IMAGE -->
+    <section>
+      <h2>Visual Illustration</h2>
+
+      <img src="https://www.csssolid.com/images/box-model/css-box-model.png" 
+           alt="CSS Box Model Diagram" width="250"
+           style="max-width:100%; border:1px solid #ccc;">
+      <p>Image credits to www.csssolid.com</p>
+
+      <p>
+        This diagram shows how content, padding, border, and margin are layered.
+      </p>
+    </section>
+
+    <!-- CODE -->
+    <section>
+      <h2>Example</h2>
+
+      <pre>
+div {
+  margin: 20px;
+  padding: 15px;
+  border: 2px solid black;
+}
+      </pre>
+
+      <p>
+        This creates space outside (margin), space inside (padding), and a visible border.
+      </p>
+    </section>
+
+    <!-- REAL WORLD -->
+    <section>
+      <h2>Why It Matters</h2>
+      <ul>
+        <li>Controls spacing between elements</li>
+        <li>Helps align content properly</li>
+        <li>Essential for layout and design</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Create a div with padding and margin</li>
+        <li>Add a border to visualize the box</li>
+        <li>Experiment with different spacing values</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="../layout/flexbox.html">Flexbox →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
