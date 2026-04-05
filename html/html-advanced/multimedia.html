@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Multimedia (Audio & Video)</title>
+  <meta name="description" content="Learn how to add audio and video to your HTML webpages.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <strong>FullStack Journey</strong>
+    <div style="float:right;">
+      <a href="/fullstack-learning-journey/index.html">HOME</a>
+      <a href="/fullstack-learning-journey/html/index.html">HTML</a>
+    </div>
+  </nav>
+  
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Multimedia (Audio & Video)</h1>
+      <p>
+        Multimedia makes your website more engaging. You can add audio and video
+        directly into your webpages using HTML.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>How to add audio to a webpage</li>
+        <li>How to add video to a webpage</li>
+        <li>How to use controls and attributes</li>
+      </ul>
+    </section>
+
+    <!-- AUDIO -->
+    <section>
+      <h2>Adding Audio</h2>
+
+      <pre>
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  Your browser does not support audio.
+&lt;/audio&gt;
+      </pre>
+
+      <p>
+        The <strong>&lt;audio&gt;</strong> tag allows you to embed sound in your page.
+      </p>
+    </section>
+
+    <!-- VIDEO -->
+    <section>
+      <h2>Adding Video</h2>
+
+      <pre>
+&lt;video width="320" height="240" controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  Your browser does not support video.
+&lt;/video&gt;
+      </pre>
+
+      <p>
+        The <strong>&lt;video&gt;</strong> tag allows you to embed videos.
+      </p>
+    </section>
+
+    <!-- ATTRIBUTES -->
+    <section>
+      <h2>Common Attributes</h2>
+      <ul>
+        <li><strong>controls</strong> shows play/pause buttons</li>
+        <li><strong>autoplay</strong> plays automatically</li>
+        <li><strong>loop</strong> repeats the media</li>
+        <li><strong>muted</strong> starts without sound</li>
+      </ul>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Use appropriate file formats (MP3, MP4)</li>
+        <li>Avoid autoplay for better user experience</li>
+        <li>Provide fallback text for unsupported browsers</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Add an audio file to your page</li>
+        <li>Add a video with controls</li>
+        <li>Experiment with autoplay and loop</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="accessibility.html">Accessibility →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
