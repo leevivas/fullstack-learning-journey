@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Start Learning JavaScript</title>
+  <meta name="description" content="Learn JavaScript step by step. Build interactive and dynamic web applications.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Start Learning JavaScript</h1>
+      <p>
+        JavaScript makes your website interactive. It allows you to respond to user actions,
+        update content dynamically, and build real applications.
+      </p>
+    </header>
+
+    <!-- INTRO -->
+    <section>
+      <h2>What is JavaScript?</h2>
+      <p>
+        JavaScript is a programming language used to create dynamic behavior on websites.
+        It works together with HTML and CSS to build complete web applications.
+      </p>
+    </section>
+
+    <!-- LEARNING PATH -->
+    <section>
+      <h2>JavaScript Learning Path</h2>
+
+      <!-- BEGINNER -->
+      <h3>Beginner</h3>
+      <ul>
+
+        <li>
+          <a href="basics/index.html">
+            JavaScript Basics →
+          </a>
+          <p>Learn variables, data types, and basic syntax.</p>
+        </li>
+
+        <li>
+          <a href="basics/conditions.html">
+            Conditions →
+          </a>
+          <p>Control logic using if, else, and switch statements.</p>
+        </li>
+
+        <li>
+          <a href="basics/loops.html">
+            Loops →
+          </a>
+          <p>Repeat tasks using for, while, and other loops.</p>
+        </li>
+
+      </ul>
+
+      <!-- DOM -->
+      <h3>DOM Manipulation</h3>
+      <ul>
+
+        <li>
+          <a href="dom/selectors.html">
+            DOM Selectors →
+          </a>
+          <p>Select and access HTML elements using JavaScript.</p>
+        </li>
+
+        <li>
+          <a href="dom/events.html">
+            Events →
+          </a>
+          <p>Respond to user actions like clicks, typing, and more.</p>
+        </li>
+
+        <li>
+          <a href="dom/manipulation.html">
+            DOM Manipulation →
+          </a>
+          <p>Change content, styles, and structure dynamically.</p>
+        </li>
+
+      </ul>
+
+      <!-- INTERMEDIATE -->
+      <h3>Intermediate</h3>
+      <ul>
+
+        <li>
+          <a href="functions/index.html">
+            Functions →
+          </a>
+          <p>Write reusable blocks of code.</p>
+        </li>
+
+        <li>
+          <a href="arrays-objects.html">
+            Arrays & Objects →
+          </a>
+          <p>Store and manage complex data structures.</p>
+        </li>
+
+        <li>
+          <a href="es6-features.html">
+            Modern JavaScript (ES6+) →
+          </a>
+          <p>Learn arrow functions, destructuring, and modules.</p>
+        </li>
+
+      </ul>
+
+      <!-- ADVANCED -->
+      <h3>Advanced</h3>
+      <ul>
+
+        <li>
+          <a href="async/index.html">
+            Asynchronous JavaScript →
+          </a>
+          <p>Handle async operations using promises and async/await.</p>
+        </li>
+
+        <li>
+          <a href="api/fetch.html">
+            Working with APIs →
+          </a>
+          <p>Fetch and display data from external sources.</p>
+        </li>
+
+        <li>
+          <a href="error-handling.html">
+            Error Handling →
+          </a>
+          <p>Debug and manage errors in your code.</p>
+        </li>
+
+      </ul>
+
+      <!-- PROJECTS -->
+      <h3>Projects (Real-World Practice)</h3>
+      <ul>
+
+        <li>
+          <a href="projects/todo.html">
+            To-Do App →
+          </a>
+          <p>Build a simple interactive application.</p>
+        </li>
+
+        <li>
+          <a href="projects/calculator.html">
+            Calculator →
+          </a>
+          <p>Create a functional calculator using JavaScript.</p>
+        </li>
+
+      </ul>
+
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Where to Start</h2>
+      <p>
+        Begin with JavaScript Basics and build your foundation step by step.
+      </p>
+
+      <a href="basics/index.html">Start with JavaScript Basics →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+   © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
