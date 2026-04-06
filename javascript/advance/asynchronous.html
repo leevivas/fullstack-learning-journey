@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Asynchronous JavaScript</title>
+  <meta name="description" content="Learn asynchronous JavaScript using promises and async/await.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Asynchronous JavaScript</h1>
+      <p>
+        Asynchronous JavaScript allows your program to run tasks without blocking
+        other operations, making your applications faster and more efficient.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>What asynchronous programming is</li>
+        <li>How to use Promises</li>
+        <li>How to use async/await</li>
+      </ul>
+    </section>
+
+    <!-- SYNC VS ASYNC -->
+    <section>
+      <h2>Synchronous vs Asynchronous</h2>
+
+      <pre>
+// Synchronous
+console.log("Start");
+console.log("End");
+
+// Asynchronous
+console.log("Start");
+setTimeout(() => {
+  console.log("Delayed");
+}, 1000);
+console.log("End");
+      </pre>
+
+      <p>
+        Async code allows tasks to run in the background without stopping the program.
+      </p>
+    </section>
+
+    <!-- PROMISE -->
+    <section>
+      <h2>Promises</h2>
+
+      <pre>
+let promise = new Promise((resolve, reject) => {
+  let success = true;
+
+  if (success) {
+    resolve("Success!");
+  } else {
+    reject("Error!");
+  }
+});
+
+promise
+  .then(result => console.log(result))
+  .catch(error => console.log(error));
+      </pre>
+
+      <p>
+        Promises handle operations that complete in the future.
+      </p>
+    </section>
+
+    <!-- ASYNC AWAIT -->
+    <section>
+      <h2>Async / Await</h2>
+
+      <pre>
+async function getData() {
+  let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+  let data = await response.json();
+  console.log(data);
+}
+
+getData();
+      </pre>
+
+      <p>
+        <strong>async/await</strong> makes asynchronous code easier to read and write.
+      </p>
+    </section>
+
+    <!-- ERROR HANDLING -->
+    <section>
+      <h2>Error Handling</h2>
+
+      <pre>
+async function loadData() {
+  try {
+    let res = await fetch("invalid-url");
+    let data = await res.json();
+  } catch (error) {
+    console.log("Error:", error);
+  }
+}
+      </pre>
+
+      <p>
+        Use <strong>try...catch</strong> to handle errors in async code.
+      </p>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Use async/await for readability</li>
+        <li>Always handle errors</li>
+        <li>Avoid deeply nested callbacks</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Create a promise that resolves after 2 seconds</li>
+        <li>Fetch data from a public API</li>
+        <li>Handle errors using try...catch</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="../api/fetch.html">Working with APIs →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+      © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
