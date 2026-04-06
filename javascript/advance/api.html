@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Working with APIs (Fetch)</title>
+  <meta name="description" content="Learn how to fetch data from APIs using JavaScript.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Working with APIs (Fetch)</h1>
+      <p>
+        APIs allow your application to communicate with external services.
+        You can fetch real data and display it on your website.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>What an API is</li>
+        <li>How to use fetch()</li>
+        <li>How to display data dynamically</li>
+      </ul>
+    </section>
+
+    <!-- WHAT IS API -->
+    <section>
+      <h2>What is an API?</h2>
+      <p>
+        An API (Application Programming Interface) allows your app to request
+        data from a server.
+      </p>
+    </section>
+
+    <!-- BASIC FETCH -->
+    <section>
+      <h2>Basic Fetch Example</h2>
+
+      <pre>
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log(error));
+      </pre>
+    </section>
+
+    <!-- ASYNC FETCH -->
+    <section>
+      <h2>Using Async/Await</h2>
+
+      <pre>
+async function getPost() {
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getPost();
+      </pre>
+    </section>
+
+    <!-- DISPLAY DATA -->
+    <section>
+      <h2>Display Data on Page</h2>
+
+      <button onclick="loadData()">Load Data</button>
+      <p id="title"></p>
+
+      <script>
+        async function loadData() {
+          let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+          let data = await response.json();
+
+          document.getElementById("title").textContent = data.title;
+        }
+      </script>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Always handle errors</li>
+        <li>Use async/await for cleaner code</li>
+        <li>Validate API responses</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Fetch a list of posts</li>
+        <li>Display multiple items on the page</li>
+        <li>Show loading text while fetching data</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="../error-handling.html">Error Handling →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+   © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
