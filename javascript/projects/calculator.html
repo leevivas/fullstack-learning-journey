@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Calculator App</title>
+  <meta name="description" content="Build a simple calculator using JavaScript.">
+
+  <link rel="stylesheet" href="../../style.css">
+
+  <style>
+    .calculator {
+      max-width: 300px;
+      margin: 20px auto;
+      padding: 15px;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: white;
+    }
+
+    .display {
+      width: 100%;
+      height: 50px;
+      margin-bottom: 10px;
+      text-align: right;
+      padding: 10px;
+      font-size: 18px;
+      border: 1px solid #e5e7eb;
+      border-radius: 5px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .buttons button {
+      padding: 15px;
+      font-size: 16px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .buttons button:hover {
+      background: #1d4ed8;
+    }
+
+    .equal {
+      grid-column: span 2;
+      background: #16a34a;
+    }
+
+    .clear {
+      background: #dc2626;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Calculator App</h1>
+      <p>
+        Build a simple calculator using JavaScript.
+        This project combines logic, events, and UI interaction.
+      </p>
+    </header>
+
+    <!-- CALCULATOR -->
+    <section class="calculator">
+
+      <input type="text" id="display" class="display" disabled>
+
+      <div class="buttons">
+        <button onclick="clearDisplay()" class="clear">C</button>
+        <button onclick="append('/')">/</button>
+        <button onclick="append('*')">*</button>
+        <button onclick="append('-')">-</button>
+
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button onclick="append('+')">+</button>
+
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button onclick="append('.')">.</button>
+
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button onclick="calculate()" class="equal">=</button>
+
+        <button onclick="append('0')">0</button>
+      </div>
+
+    </section>
+
+    <!-- SCRIPT -->
+    <script>
+      let display = document.getElementById("display");
+
+      function append(value) {
+        display.value += value;
+      }
+
+      function clearDisplay() {
+        display.value = "";
+      }
+
+      function calculate() {
+        try {
+          display.value = eval(display.value);
+        } catch {
+          display.value = "Error";
+        }
+      }
+    </script>
+
+    <!-- LEARNING NOTES -->
+    <section>
+      <h2>What You Used</h2>
+      <ul>
+        <li>DOM manipulation</li>
+        <li>Event handling</li>
+        <li>Functions</li>
+        <li>Error handling</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Step</h2>
+      <p>
+        You’ve completed your first real JavaScript projects.
+        Continue building more apps to strengthen your skills.
+      </p>
+
+      <a href="../index.html">Back to JavaScript Module →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+   © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
