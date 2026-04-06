@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Start Learning Node.js</title>
+  <meta name="description" content="Learn Node.js and backend development step by step.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Start Learning Node.js</h1>
+      <p>
+        Node.js allows you to run JavaScript on the server.
+        This is where you build APIs, handle data, and create full web applications.
+      </p>
+    </header>
+
+    <!-- INTRO -->
+    <section>
+      <h2>What is Node.js?</h2>
+      <p>
+        Node.js is a runtime environment that lets you run JavaScript outside the browser.
+        It is commonly used to build backend services and APIs.
+      </p>
+    </section>
+
+    <!-- WHY IMPORTANT -->
+    <section>
+      <h2>Why Learn Node.js?</h2>
+      <ul>
+        <li>Build backend applications</li>
+        <li>Create APIs</li>
+        <li>Connect to databases</li>
+        <li>Use JavaScript for full-stack development</li>
+      </ul>
+    </section>
+
+    <!-- LEARNING PATH -->
+    <section>
+      <h2>Node.js Learning Path</h2>
+
+      <h3>Beginner</h3>
+      <ul>
+        <li>
+          <a href="basics/index.html">Node.js Basics →</a>
+          <p>Understand how Node.js works and run your first server.</p>
+        </li>
+        <li>
+          <a href="modules.html">Modules →</a>
+          <p>Learn how to organize code using modules.</p>
+        </li>
+      </ul>
+
+      <h3>Intermediate</h3>
+      <ul>
+        <li>
+          <a href="express/index.html">Express.js →</a>
+          <p>Build web servers and APIs using Express.</p>
+        </li>
+        <li>
+          <a href="routing.html">Routing →</a>
+          <p>Handle different endpoints in your application.</p>
+        </li>
+      </ul>
+
+      <h3>Advanced</h3>
+      <ul>
+        <li>
+          <a href="database.html">Database Integration →</a>
+          <p>Connect your app to a database.</p>
+        </li>
+        <li>
+          <a href="auth.html">Authentication →</a>
+          <p>Handle login and user security.</p>
+        </li>
+      </ul>
+
+      <h3>Projects</h3>
+      <ul>
+        <li>
+          <a href="projects/api.html">Build an API →</a>
+          <p>Create a real backend API.</p>
+        </li>
+      </ul>
+
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Where to Start</h2>
+      <p>
+        Begin with Node.js Basics and learn how to run your first server.
+      </p>
+
+      <a href="basics/index.html">Start with Node.js Basics →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+   © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
