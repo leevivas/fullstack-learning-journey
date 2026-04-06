@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>To-Do App</title>
+  <meta name="description" content="Build a simple to-do app using JavaScript.">
+
+  <link rel="stylesheet" href="../../style.css">
+
+  <style>
+    .todo-container {
+      max-width: 500px;
+      margin: 20px auto;
+    }
+
+    .todo-input {
+      display: flex;
+      gap: 10px;
+    }
+
+    .todo-input input {
+      flex: 1;
+      padding: 10px;
+    }
+
+    .todo-item {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #e5e7eb;
+      border-radius: 5px;
+    }
+
+    .done {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>To-Do App</h1>
+      <p>
+        Build a simple interactive application using JavaScript.
+        This project combines DOM manipulation, events, and logic.
+      </p>
+    </header>
+
+    <!-- APP -->
+    <section class="todo-container">
+
+      <div class="todo-input">
+        <input type="text" id="taskInput" placeholder="Enter a task">
+        <button onclick="addTask()">Add</button>
+      </div>
+
+      <div id="taskList"></div>
+
+    </section>
+
+    <!-- SCRIPT -->
+    <script>
+      function addTask() {
+        let input = document.getElementById("taskInput");
+        let taskText = input.value;
+
+        if (taskText === "") return;
+
+        let taskList = document.getElementById("taskList");
+
+        let task = document.createElement("div");
+        task.className = "todo-item";
+
+        let span = document.createElement("span");
+        span.textContent = taskText;
+
+        span.onclick = function() {
+          span.classList.toggle("done");
+        };
+
+        let removeBtn = document.createElement("button");
+        removeBtn.textContent = "Delete";
+
+        removeBtn.onclick = function() {
+          task.remove();
+        };
+
+        task.appendChild(span);
+        task.appendChild(removeBtn);
+
+        taskList.appendChild(task);
+
+        input.value = "";
+      }
+    </script>
+
+    <!-- LEARNING NOTES -->
+    <section>
+      <h2>What You Used</h2>
+      <ul>
+        <li>DOM manipulation</li>
+        <li>Events (click)</li>
+        <li>Functions</li>
+        <li>Condition checks</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Project</h2>
+      <a href="calculator.html">Calculator →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+   © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
