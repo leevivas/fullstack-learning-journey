@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Error Handling in JavaScript</title>
+  <meta name="description" content="Learn how to debug and manage errors in JavaScript.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Error Handling</h1>
+      <p>
+        Error handling helps you detect, manage, and fix problems in your code.
+        It ensures your application runs smoothly even when something goes wrong.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>What errors are</li>
+        <li>How to use try...catch</li>
+        <li>How to debug your code</li>
+      </ul>
+    </section>
+
+    <!-- TYPES OF ERRORS -->
+    <section>
+      <h2>Types of Errors</h2>
+      <ul>
+        <li>Syntax Errors — mistakes in code structure</li>
+        <li>Runtime Errors — occur while the program runs</li>
+        <li>Logical Errors — incorrect results</li>
+      </ul>
+    </section>
+
+    <!-- TRY CATCH -->
+    <section>
+      <h2>Try...Catch</h2>
+
+      <pre>
+try {
+  let x = y; // y is not defined
+} catch (error) {
+  console.log("Error:", error.message);
+}
+      </pre>
+
+      <p>
+        The <strong>try</strong> block runs code, and <strong>catch</strong> handles errors.
+      </p>
+    </section>
+
+    <!-- FINALLY -->
+    <section>
+      <h2>Finally</h2>
+
+      <pre>
+try {
+  console.log("Trying...");
+} catch (error) {
+  console.log(error);
+} finally {
+  console.log("Always runs");
+}
+      </pre>
+
+      <p>
+        The <strong>finally</strong> block always runs, whether an error occurs or not.
+      </p>
+    </section>
+
+    <!-- THROW -->
+    <section>
+      <h2>Throw Custom Errors</h2>
+
+      <pre>
+function checkAge(age) {
+  if (age < 18) {
+    throw new Error("Must be 18 or older");
+  }
+}
+
+try {
+  checkAge(15);
+} catch (error) {
+  console.log(error.message);
+}
+      </pre>
+
+      <p>
+        You can create your own errors using <strong>throw</strong>.
+      </p>
+    </section>
+
+    <!-- DEBUGGING -->
+    <section>
+      <h2>Debugging Tips</h2>
+      <ul>
+        <li>Use <strong>console.log()</strong> to check values</li>
+        <li>Read error messages carefully</li>
+        <li>Use browser developer tools</li>
+      </ul>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Always handle possible errors</li>
+        <li>Write clear error messages</li>
+        <li>Don’t ignore errors</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Create a try...catch block</li>
+        <li>Throw a custom error</li>
+        <li>Debug a simple mistake</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Step</h2>
+      <p>
+        You’ve completed advanced JavaScript. Next, build real projects to apply your knowledge.
+      </p>
+
+      <a href="projects/todo.html">Build a To-Do App →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+   © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
