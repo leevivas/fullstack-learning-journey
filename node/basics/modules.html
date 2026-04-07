@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Node.js Modules</title>
+  <meta name="description" content="Learn how to organize code using modules in Node.js.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Modules</h1>
+      <p>
+        Modules allow you to split your code into smaller, reusable files.
+        This makes your application easier to manage and scale.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>What modules are</li>
+        <li>How to export code</li>
+        <li>How to import modules</li>
+      </ul>
+    </section>
+
+    <!-- WHAT IS MODULE -->
+    <section>
+      <h2>What is a Module?</h2>
+      <p>
+        A module is a separate file that contains code you can reuse in other parts
+        of your application.
+      </p>
+    </section>
+
+    <!-- EXPORT -->
+    <section>
+      <h2>Exporting Code</h2>
+
+      <pre>
+// math.js
+function add(a, b) {
+  return a + b;
+}
+
+module.exports = add;
+      </pre>
+
+      <p>
+        Use <strong>module.exports</strong> to share code.
+      </p>
+    </section>
+
+    <!-- IMPORT -->
+    <section>
+      <h2>Importing Code</h2>
+
+      <pre>
+// app.js
+const add = require("./math");
+
+console.log(add(2, 3));
+      </pre>
+
+      <p>
+        Use <strong>require()</strong> to import modules.
+      </p>
+    </section>
+
+    <!-- MULTIPLE EXPORT -->
+    <section>
+      <h2>Export Multiple Functions</h2>
+
+      <pre>
+// math.js
+module.exports = {
+  add,
+  subtract
+};
+      </pre>
+
+      <p>
+        You can export multiple functions as an object.
+      </p>
+    </section>
+
+    <!-- BUILT IN -->
+    <section>
+      <h2>Built-in Modules</h2>
+      <ul>
+        <li>http → create servers</li>
+        <li>fs → file system</li>
+        <li>path → file paths</li>
+      </ul>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Keep modules small and focused</li>
+        <li>Group related functions</li>
+        <li>Use clear file names</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Create a math module</li>
+        <li>Export multiple functions</li>
+        <li>Import and use them in another file</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="express/index.html">Express.js →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+   © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
