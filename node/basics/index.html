@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Node.js Basics</title>
+  <meta name="description" content="Learn the basics of Node.js and create your first server.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Node.js Basics</h1>
+      <p>
+        Node.js allows you to run JavaScript on the server.
+        Let’s build your first backend application.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>What Node.js is</li>
+        <li>How to run JavaScript outside the browser</li>
+        <li>How to create a simple server</li>
+      </ul>
+    </section>
+
+    <!-- WHAT IS NODE -->
+    <section>
+      <h2>What is Node.js?</h2>
+      <p>
+        Node.js is a runtime environment that allows JavaScript to run on your computer
+        or server instead of just inside a browser.
+      </p>
+    </section>
+
+    <!-- INSTALL -->
+    <section>
+      <h2>Run JavaScript with Node</h2>
+
+      <pre>
+node app.js
+      </pre>
+
+      <p>
+        This command runs your JavaScript file using Node.js.
+      </p>
+    </section>
+
+    <!-- FIRST SERVER -->
+    <section>
+      <h2>Create Your First Server</h2>
+
+      <pre>
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+  res.write("Hello from Node.js!");
+  res.end();
+});
+
+server.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
+});
+      </pre>
+
+      <p>
+        This creates a basic server that responds with text.
+      </p>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section>
+      <h2>How It Works</h2>
+      <ul>
+        <li><strong>http</strong> → built-in module</li>
+        <li><strong>createServer()</strong> → creates server</li>
+        <li><strong>req</strong> → request from user</li>
+        <li><strong>res</strong> → response sent back</li>
+      </ul>
+    </section>
+
+    <!-- TEST -->
+    <section>
+      <h2>Test Your Server</h2>
+      <p>
+        Open your browser and go to:
+      </p>
+
+      <pre>
+http://localhost:3000
+      </pre>
+
+      <p>You should see your message.</p>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Keep server code simple</li>
+        <li>Use modules to organize code</li>
+        <li>Always handle requests properly</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Create your own server message</li>
+        <li>Change the port number</li>
+        <li>Log requests in the console</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="../modules.html">Modules →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+   © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
