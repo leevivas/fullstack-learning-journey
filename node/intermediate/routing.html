@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Routing in Express</title>
+  <meta name="description" content="Learn how to handle different endpoints using routing in Express.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Routing</h1>
+      <p>
+        Routing allows your application to respond to different URLs (endpoints).
+        It helps organize how your server handles requests.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>What routes are</li>
+        <li>How to handle multiple endpoints</li>
+        <li>How to organize routes in Express</li>
+      </ul>
+    </section>
+
+    <!-- WHAT IS ROUTE -->
+    <section>
+      <h2>What is a Route?</h2>
+      <p>
+        A route defines how your server responds to a specific request URL.
+      </p>
+
+      <pre>
+app.get("/", (req, res) => {
+  res.send("Home Page");
+});
+      </pre>
+    </section>
+
+    <!-- MULTIPLE ROUTES -->
+    <section>
+      <h2>Multiple Routes</h2>
+
+      <pre>
+app.get("/about", (req, res) => {
+  res.send("About Page");
+});
+
+app.get("/contact", (req, res) => {
+  res.send("Contact Page");
+});
+      </pre>
+
+      <p>
+        Each route handles a different endpoint.
+      </p>
+    </section>
+
+    <!-- ROUTE PARAMETERS -->
+    <section>
+      <h2>Route Parameters</h2>
+
+      <pre>
+app.get("/user/:id", (req, res) => {
+  res.send("User ID: " + req.params.id);
+});
+      </pre>
+
+      <p>
+        Route parameters allow dynamic values in URLs.
+      </p>
+    </section>
+
+    <!-- QUERY PARAMETERS -->
+    <section>
+      <h2>Query Parameters</h2>
+
+      <pre>
+app.get("/search", (req, res) => {
+  res.send("Query: " + req.query.q);
+});
+      </pre>
+
+      <p>
+        Access query values from the URL.
+      </p>
+    </section>
+
+    <!-- ROUTER FILE -->
+    <section>
+      <h2>Organizing Routes (Router)</h2>
+
+      <pre>
+// routes/user.js
+const express = require("express");
+const router = express.Router();
+
+router.get("/", (req, res) => {
+  res.send("User List");
+});
+
+module.exports = router;
+      </pre>
+
+      <pre>
+// app.js
+const userRoutes = require("./routes/user");
+
+app.use("/users", userRoutes);
+      </pre>
+
+      <p>
+        Use routers to keep your code clean and modular.
+      </p>
+    </section>
+
+    <!-- WHY IMPORTANT -->
+    <section>
+      <h2>Why Routing Matters</h2>
+      <ul>
+        <li>Organizes backend logic</li>
+        <li>Handles multiple endpoints</li>
+        <li>Improves scalability</li>
+      </ul>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Group related routes</li>
+        <li>Use routers for large apps</li>
+        <li>Keep routes simple and readable</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Create /about and /contact routes</li>
+        <li>Create a route with parameters</li>
+        <li>Organize routes into a separate file</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="database.html">Database Integration →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+   © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
