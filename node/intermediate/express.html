@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Express.js</title>
+  <meta name="description" content="Learn how to build web servers and APIs using Express.js.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+  
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Express.js</h1>
+      <p>
+        Express.js is a framework for Node.js that simplifies building web servers and APIs.
+        It is widely used in real-world applications.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>What Express.js is</li>
+        <li>How to create a server using Express</li>
+        <li>How to build API endpoints</li>
+      </ul>
+    </section>
+
+    <!-- WHAT IS EXPRESS -->
+    <section>
+      <h2>What is Express.js?</h2>
+      <p>
+        Express.js is a minimal and flexible Node.js framework that makes it easier
+        to build servers and handle requests.
+      </p>
+    </section>
+
+    <!-- INSTALL -->
+    <section>
+      <h2>Install Express</h2>
+
+      <pre>
+npm init -y
+npm install express
+      </pre>
+
+      <p>
+        These commands set up your project and install Express.
+      </p>
+    </section>
+
+    <!-- BASIC SERVER -->
+    <section>
+      <h2>Create a Basic Server</h2>
+
+      <pre>
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Hello from Express!");
+});
+
+app.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
+});
+      </pre>
+
+      <p>
+        This creates a simple server with one route.
+      </p>
+    </section>
+
+    <!-- ROUTES -->
+    <section>
+      <h2>Routes (Endpoints)</h2>
+
+      <pre>
+app.get("/about", (req, res) => {
+  res.send("About Page");
+});
+
+app.get("/api/data", (req, res) => {
+  res.json({ message: "Hello API" });
+});
+      </pre>
+
+      <p>
+        Routes define how your server responds to requests.
+      </p>
+    </section>
+
+    <!-- JSON -->
+    <section>
+      <h2>Send JSON Data</h2>
+
+      <pre>
+res.json({ name: "John", age: 25 });
+      </pre>
+
+      <p>
+        APIs often send data in JSON format.
+      </p>
+    </section>
+
+    <!-- WHY IMPORTANT -->
+    <section>
+      <h2>Why Express Matters</h2>
+      <ul>
+        <li>Build REST APIs</li>
+        <li>Handle HTTP requests easily</li>
+        <li>Used in production applications</li>
+      </ul>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Keep routes organized</li>
+        <li>Use middleware for logic</li>
+        <li>Separate files using modules</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Create a route for /home</li>
+        <li>Create an API endpoint</li>
+        <li>Return JSON data</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="../routing.html">Routing →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+© 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
