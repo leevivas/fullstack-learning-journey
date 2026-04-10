@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Start Learning SQL</title>
+  <meta name="description" content="Learn SQL and relational databases step by step.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Start Learning SQL</h1>
+      <p>
+        SQL (Structured Query Language) is used to manage relational databases.
+        It allows you to store, retrieve, and manipulate structured data.
+      </p>
+    </header>
+
+    <!-- INTRO -->
+    <section>
+      <h2>What is SQL?</h2>
+      <p>
+        SQL is a language used to interact with databases like MySQL and PostgreSQL.
+        It is essential for backend development and data-driven applications.
+      </p>
+    </section>
+
+    <!-- LEARNING PATH -->
+    <section>
+      <h2>SQL Learning Path</h2>
+
+      <!-- BEGINNER -->
+      <h3>Beginner</h3>
+      <ul>
+        <li>
+          <a href="basics.html">SQL Basics →</a>
+          <p>Learn tables, rows, and basic queries.</p>
+        </li>
+        <li>
+          <a href="select.html">SELECT Queries →</a>
+          <p>Retrieve data from a database.</p>
+        </li>
+      </ul>
+
+      <!-- INTERMEDIATE -->
+      <h3>Intermediate</h3>
+      <ul>
+        <li>
+          <a href="joins.html">Joins →</a>
+          <p>Combine data from multiple tables.</p>
+        </li>
+        <li>
+          <a href="constraints.html">Constraints →</a>
+          <p>Control data integrity (PRIMARY KEY, FOREIGN KEY).</p>
+        </li>
+      </ul>
+
+      <!-- ADVANCED -->
+      <h3>Advanced</h3>
+      <ul>
+        <li>
+          <a href="indexing.html">Indexing →</a>
+          <p>Improve database performance.</p>
+        </li>
+        <li>
+          <a href="transactions.html">Transactions →</a>
+          <p>Ensure data consistency.</p>
+        </li>
+      </ul>
+
+      <!-- PROJECT -->
+      <h3>Project</h3>
+      <ul>
+        <li>
+          <a href="projects/database-design.html">Design a Database →</a>
+          <p>Create a real database schema.</p>
+        </li>
+      </ul>
+
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Where to Start</h2>
+      <a href="basics.html">Start with SQL Basics →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
