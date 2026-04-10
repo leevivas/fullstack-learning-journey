@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Authentication in Node.js</title>
+  <meta name="description" content="Learn how to handle login and user authentication in Node.js.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+ <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Authentication</h1>
+      <p>
+        Authentication ensures that users can securely log in and access protected
+        parts of your application.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>What authentication is</li>
+        <li>How login systems work</li>
+        <li>How to protect routes</li>
+      </ul>
+    </section>
+
+    <!-- WHAT IS AUTH -->
+    <section>
+      <h2>What is Authentication?</h2>
+      <p>
+        Authentication is the process of verifying a user's identity.
+        It ensures only authorized users can access certain parts of your app.
+      </p>
+    </section>
+
+    <!-- BASIC FLOW -->
+    <section>
+      <h2>Basic Authentication Flow</h2>
+      <ul>
+        <li>User enters email and password</li>
+        <li>Server verifies credentials</li>
+        <li>Server returns a token or session</li>
+        <li>User accesses protected routes</li>
+      </ul>
+    </section>
+
+    <!-- HASH PASSWORD -->
+    <section>
+      <h2>Password Hashing</h2>
+
+      <pre>
+npm install bcrypt
+      </pre>
+
+      <pre>
+const bcrypt = require("bcrypt");
+
+const hashedPassword = await bcrypt.hash("mypassword", 10);
+      </pre>
+
+      <p>
+        Never store plain passwords. Always hash them.
+      </p>
+    </section>
+
+    <!-- COMPARE -->
+    <section>
+      <h2>Verify Password</h2>
+
+      <pre>
+const match = await bcrypt.compare("mypassword", hashedPassword);
+      </pre>
+
+      <p>
+        Compare user input with stored hash.
+      </p>
+    </section>
+
+    <!-- JWT -->
+    <section>
+      <h2>JSON Web Token (JWT)</h2>
+
+      <pre>
+npm install jsonwebtoken
+      </pre>
+
+      <pre>
+const jwt = require("jsonwebtoken");
+
+const token = jwt.sign({ userId: 1 }, "secretkey");
+      </pre>
+
+      <p>
+        JWT is used to authenticate users after login.
+      </p>
+    </section>
+
+    <!-- PROTECT ROUTE -->
+    <section>
+      <h2>Protect Routes</h2>
+
+      <pre>
+function authMiddleware(req, res, next) {
+  const token = req.headers.authorization;
+
+  if (!token) return res.send("Access denied");
+
+  next();
+}
+      </pre>
+
+      <p>
+        Middleware protects routes from unauthorized access.
+      </p>
+    </section>
+
+    <!-- WHY IMPORTANT -->
+    <section>
+      <h2>Why Authentication Matters</h2>
+      <ul>
+        <li>Protect user data</li>
+        <li>Secure applications</li>
+        <li>Enable login systems</li>
+      </ul>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Hash passwords (bcrypt)</li>
+        <li>Use JWT or sessions</li>
+        <li>Never expose sensitive data</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Create a login system</li>
+        <li>Hash and verify passwords</li>
+        <li>Protect a route using middleware</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Step</h2>
+      <a href="projects/api.html">Build a Backend API →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
