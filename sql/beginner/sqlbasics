@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SQL Basics</title>
+  <meta name="description" content="Learn SQL basics including tables, rows, and basic queries.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+ <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>SQL Basics</h1>
+      <p>
+        SQL (Structured Query Language) is used to manage data in relational databases.
+        Let’s start with the fundamentals.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>What tables, rows, and columns are</li>
+        <li>How to create a table</li>
+        <li>Basic SQL commands</li>
+      </ul>
+    </section>
+
+    <!-- TABLE STRUCTURE -->
+    <section>
+      <h2>Database Structure</h2>
+      <ul>
+        <li><strong>Table</strong> → collection of data</li>
+        <li><strong>Row</strong> → a single record</li>
+        <li><strong>Column</strong> → a field (data type)</li>
+      </ul>
+    </section>
+
+    <!-- CREATE TABLE -->
+    <section>
+      <h2>Create a Table</h2>
+
+      <pre>
+CREATE TABLE users (
+  id INT,
+  name VARCHAR(100),
+  age INT
+);
+      </pre>
+
+      <p>
+        This creates a table named <strong>users</strong>.
+      </p>
+    </section>
+
+    <!-- INSERT -->
+    <section>
+      <h2>Insert Data</h2>
+
+      <pre>
+INSERT INTO users (id, name, age)
+VALUES (1, 'John', 25);
+      </pre>
+
+      <p>
+        This adds a new row to the table.
+      </p>
+    </section>
+
+    <!-- SELECT -->
+    <section>
+      <h2>View Data</h2>
+
+      <pre>
+SELECT * FROM users;
+      </pre>
+
+      <p>
+        This retrieves all data from the table.
+      </p>
+    </section>
+
+    <!-- DATA TYPES -->
+    <section>
+      <h2>Common Data Types</h2>
+      <ul>
+        <li>INT → numbers</li>
+        <li>VARCHAR → text</li>
+        <li>DATE → dates</li>
+      </ul>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Use meaningful table names</li>
+        <li>Choose correct data types</li>
+        <li>Keep tables organized</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Create a table for students</li>
+        <li>Insert at least 3 records</li>
+        <li>Display all records</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="select.html">SELECT Queries →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
