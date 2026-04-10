@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Database Integration</title>
+  <meta name="description" content="Learn how to connect your Node.js app to a database.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+ <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Database Integration</h1>
+      <p>
+        Databases allow your application to store and manage data.
+        This is essential for building real-world applications.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>What a database is</li>
+        <li>How to connect Node.js to a database</li>
+        <li>Basic CRUD operations</li>
+      </ul>
+    </section>
+
+    <!-- WHAT IS DB -->
+    <section>
+      <h2>What is a Database?</h2>
+      <p>
+        A database stores information such as users, products, and tasks.
+        Your application can create, read, update, and delete data.
+      </p>
+    </section>
+
+    <!-- TYPES -->
+    <section>
+      <h2>Types of Databases</h2>
+      <ul>
+        <li><strong>NoSQL</strong> — MongoDB</li>
+        <li><strong>SQL</strong> — MySQL, PostgreSQL</li>
+      </ul>
+    </section>
+
+    <!-- MONGODB -->
+    <section>
+      <h2>Example: MongoDB with Mongoose</h2>
+
+      <pre>
+npm install mongoose
+      </pre>
+
+      <pre>
+const mongoose = require("mongoose");
+
+mongoose.connect("mongodb://localhost:27017/myapp")
+  .then(() => console.log("Connected to DB"))
+  .catch(err => console.log(err));
+      </pre>
+    </section>
+
+    <!-- MODEL -->
+    <section>
+      <h2>Create a Model</h2>
+
+      <pre>
+const User = mongoose.model("User", {
+  name: String,
+  age: Number
+});
+      </pre>
+    </section>
+
+    <!-- CREATE -->
+    <section>
+      <h2>Create Data</h2>
+
+      <pre>
+const user = new User({ name: "John", age: 25 });
+user.save();
+      </pre>
+    </section>
+
+    <!-- READ -->
+    <section>
+      <h2>Read Data</h2>
+
+      <pre>
+User.find().then(users => console.log(users));
+      </pre>
+    </section>
+
+    <!-- UPDATE -->
+    <section>
+      <h2>Update Data</h2>
+
+      <pre>
+User.updateOne({ name: "John" }, { age: 30 });
+      </pre>
+    </section>
+
+    <!-- DELETE -->
+    <section>
+      <h2>Delete Data</h2>
+
+      <pre>
+User.deleteOne({ name: "John" });
+      </pre>
+    </section>
+
+    <!-- CRUD -->
+    <section>
+      <h2>CRUD Operations</h2>
+      <ul>
+        <li>Create</li>
+        <li>Read</li>
+        <li>Update</li>
+        <li>Delete</li>
+      </ul>
+    </section>
+
+    <!-- BEST PRACTICE -->
+    <section>
+      <h2>Best Practice</h2>
+      <ul>
+        <li>Validate data before saving</li>
+        <li>Handle database errors</li>
+        <li>Separate database logic into modules</li>
+      </ul>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section>
+      <h2>Try It Yourself</h2>
+      <ul>
+        <li>Connect to a local database</li>
+        <li>Create a model</li>
+        <li>Perform CRUD operations</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section>
+      <h2>Next Lesson</h2>
+      <a href="auth.html">Authentication →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
