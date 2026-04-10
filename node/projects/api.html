@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Build a Backend API</title>
+  <meta name="description" content="Build a real backend API using Node.js and Express.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+ <!-- NAV -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch('/fullstack-learning-journey/components/nav.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+    });
+</script>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Build a Backend API</h1>
+      <p>
+        In this project, you will build a real API using Node.js and Express.
+        This is how modern web applications communicate with servers.
+      </p>
+    </header>
+
+    <!-- OBJECTIVES -->
+    <section>
+      <h2>What You Will Build</h2>
+      <ul>
+        <li>A REST API</li>
+        <li>CRUD operations</li>
+        <li>JSON responses</li>
+      </ul>
+    </section>
+
+    <!-- PROJECT STRUCTURE -->
+    <section>
+      <h2>Project Structure</h2>
+
+      <pre>
+project/
+ ├── app.js
+ ├── routes/
+ │    └── items.js
+ ├── models/
+ │    └── item.js
+      </pre>
+    </section>
+
+    <!-- SETUP -->
+    <section>
+      <h2>Setup Project</h2>
+
+      <pre>
+npm init -y
+npm install express
+      </pre>
+    </section>
+
+    <!-- BASIC SERVER -->
+    <section>
+      <h2>Create Server</h2>
+
+      <pre>
+const express = require("express");
+const app = express();
+
+app.use(express.json());
+
+app.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
+});
+      </pre>
+    </section>
+
+    <!-- ROUTES -->
+    <section>
+      <h2>Create Routes</h2>
+
+      <pre>
+let items = [];
+
+app.get("/api/items", (req, res) => {
+  res.json(items);
+});
+
+app.post("/api/items", (req, res) => {
+  items.push(req.body);
+  res.json({ message: "Item added" });
+});
+      </pre>
+    </section>
+
+    <!-- UPDATE -->
+    <section>
+      <h2>Update Item</h2>
+
+      <pre>
+app.put("/api/items/:id", (req, res) => {
+  items[req.params.id] = req.body;
+  res.json({ message: "Item updated" });
+});
+      </pre>
+    </section>
+
+    <!-- DELETE -->
+    <section>
+      <h2>Delete Item</h2>
+
+      <pre>
+app.delete("/api/items/:id", (req, res) => {
+  items.splice(req.params.id, 1);
+  res.json({ message: "Item deleted" });
+});
+      </pre>
+    </section>
+
+    <!-- TEST -->
+    <section>
+      <h2>Test Your API</h2>
+      <ul>
+        <li>Use Postman or browser</li>
+        <li>Send GET, POST, PUT, DELETE requests</li>
+      </ul>
+    </section>
+
+    <!-- WHAT YOU USED -->
+    <section>
+      <h2>What You Used</h2>
+      <ul>
+        <li>Express.js</li>
+        <li>Routing</li>
+        <li>JSON handling</li>
+        <li>CRUD operations</li>
+      </ul>
+    </section>
+
+    <!-- UPGRADE -->
+    <section>
+      <h2>Upgrade Your Project</h2>
+      <ul>
+        <li>Connect to a database</li>
+        <li>Add authentication</li>
+        <li>Validate inputs</li>
+      </ul>
+    </section>
+
+    <!-- FINAL -->
+    <section>
+      <h2>Final Step</h2>
+      <p>
+        You’ve now built a full backend API.
+        Combine this with your frontend to create full-stack applications.
+      </p>
+
+      <a href="../index.html">Back to Node.js Module →</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Full-Stack Learning Journey. Built while learning, one step at a time. | <a href="https://github.com/leevivas">GitHub</a>
+  </footer>
+
+</body>
+</html>
